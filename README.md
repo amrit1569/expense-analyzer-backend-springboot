@@ -1,64 +1,126 @@
 # Expense Analyzer Backend
 
-A Spring Boot REST API for Expense Analyzer.
+A secure REST API built with Java Spring Boot for managing personal expenses. The project includes JWT Authentication, Spring Security, PostgreSQL integration, and CRUD operations for expense management.
+
+## Features
+
+- User Registration & Login
+- JWT Authentication
+- Spring Security
+- Expense CRUD APIs
+- PostgreSQL Database
+- Global Exception Handling
+- CORS Configuration
+- RESTful API Design
 
 ## Tech Stack
 
 - Java 21
 - Spring Boot 3
 - Spring Security
-- JWT Authentication
+- Spring Data JPA
 - PostgreSQL
 - Maven
+- JWT
+- Hibernate
 
-## Features
+## Project Structure
 
-- User Registration
-- User Login
-- JWT Authentication
-- Password Encryption (BCrypt)
-- Role Based Authorization
-- REST APIs
+```
+src
+├── main
+│   ├── java
+│   │   └── com.expense.analyzer
+│   │       ├── config
+│   │       ├── controller
+│   │       ├── dto
+│   │       ├── entity
+│   │       ├── exception
+│   │       ├── repository
+│   │       ├── service
+│   │       └── ExpenseAnalyzerApplication.java
+│   └── resources
+│       └── application.properties
+```
 
-## Run Locally
+## Setup
+
+### Clone Repository
 
 ```bash
 git clone https://github.com/amrit1569/expense-analyzer-backend.git
-cd expense-analyzer-backend/analyzer
 ```
 
-Run the application:
+### Open Project
+
+Open the project in IntelliJ IDEA.
+
+### Configure Database
+
+Update `application.properties`
+
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/Expense analyzer
+spring.datasource.username=postgres
+spring.datasource.password=your_password
+```
+
+### Run Project
 
 ```bash
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
 
-or on Windows:
-
-```bash
-mvnw.cmd spring-boot:run
-```
-
-Backend runs on:
+Application runs on:
 
 ```
 http://localhost:8081
 ```
 
-## API Endpoints
+## Authentication
 
-### Register
+This project uses JWT Authentication.
+
+Typical flow:
+
+1. Register User
+2. Login
+3. Receive JWT Token
+4. Pass token in Authorization Header
 
 ```
-POST /auth/register
+Authorization: Bearer YOUR_TOKEN
 ```
 
-### Login
+## Main APIs
 
-```
-POST /auth/login
-```
+### Authentication
+
+- POST /auth/register
+- POST /auth/login
+
+### Expense
+
+- GET /expenses
+- GET /expenses/{id}
+- POST /expenses
+- PUT /expenses/{id}
+- DELETE /expenses/{id}
+
+## Future Improvements
+
+- Expense Categories
+- Monthly Analytics
+- Charts & Reports
+- Email Notifications
+- Docker Support
+- CI/CD Pipeline
+- Unit Testing
+- Swagger Documentation
 
 ## Author
 
-Amrit Mishra
+**Amrit Mishra**
+
+GitHub:
+https://github.com/amrit1569
