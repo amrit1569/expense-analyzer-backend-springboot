@@ -39,7 +39,7 @@ public class SecurityConfig {
         configuration.setAllowedOrigins(List.of(
                 "http://localhost:3000",
                 "http://localhost:5173",
-                "https://expense-analyzer-frontend.vercel.app"
+                "https://expense-analyzer-frontend-five.vercel.app/login"
         ));
 
         configuration.setAllowedMethods(
